@@ -1,0 +1,406 @@
+<?php
+
+
+// // Users
+// * login
+// * password
+// * color
+// * imagePath
+
+
+// Здесь можно менять
+$sessionDelay   = 10;
+$songDelay      = 10;
+$sendDelay      = 30;
+// ^^  Здесь можно менять
+
+function getUsers(){
+
+  $users =  [
+    [
+      'login'       => 'jura',
+      'username'    => 'Романтик',
+      'password'    => '5565',
+      'color'       => 'rgb(165 31 34)',
+      'image'       => 'romantic_red1.jpg',
+      'player'      => 'https://myradio24.org/9479',
+      'form'        => 'http://myradio24.com/ru/table/9479?get=json&ahack',
+    ],
+	     [
+      'login'       => 'rumi_r1',
+      'username'    => 'RUMI_R1',
+      'password'    => 'o1p35q',
+      'color'       => 'rgb(21 96 178)',
+      'image'       => 'image-3.jpeg',
+      'player'      => 'https://myradio24.org/9479',
+      'form'        => 'http://myradio24.com/ru/table/9479?get=json&ahack',
+    ],
+	  	     [
+      'login'       => 'rumi_r2',
+      'username'    => 'RUMI_R2',
+      'password'    => 'hpzkjn',
+      'color'       => 'rgb(21 96 178)',
+      'image'       => 'image-3.jpeg',
+      'player'      => 'https://myradio24.org/9479',
+      'form'        => 'http://myradio24.com/ru/table/9479?get=json&ahack',
+    ],
+	  	     [
+      'login'       => 'rumi_r3',
+      'username'    => 'RUMI_R3',
+      'password'    => '3sz2jt',
+      'color'       => 'rgb(21 96 178)',
+      'image'       => 'image-3.jpeg',
+      'player'      => 'https://myradio24.org/9479',
+      'form'        => 'http://myradio24.com/ru/table/9479?get=json&ahack',
+    ],
+	  	     [
+      'login'       => 'rumi_r4',
+      'username'    => 'RUMI_R4',
+      'password'    => 'ome6df',
+      'color'       => 'rgb(21 96 178)',
+      'image'       => 'image-3.jpeg',
+      'player'      => 'https://myradio24.org/9479',
+      'form'        => 'http://myradio24.com/ru/table/9479?get=json&ahack',
+    ],
+	  	     [
+      'login'       => 'rumi_r5',
+      'username'    => 'RUMI_R5',
+      'password'    => 'cvk8yu',
+      'color'       => 'rgb(21 96 178)',
+      'image'       => 'image-3.jpeg',
+      'player'      => 'https://myradio24.org/9479',
+      'form'        => 'http://myradio24.com/ru/table/9479?get=json&ahack',
+    ],
+	  	     [
+      'login'       => 'rumi_lesya',
+      'username'    => 'RUMI_LESYA',
+      'password'    => 'xhpynm',
+      'color'       => 'rgb(21 96 178)',
+      'image'       => 'image-3.jpeg',
+      'player'      => 'https://myradio24.org/9479',
+      'form'        => 'http://myradio24.com/ru/table/9479?get=json&ahack',
+    ],
+	  	     [
+      'login'       => 'rumi_alisher',
+      'username'    => 'RUMI_ALISHER',
+      'password'    => 'qyognn',
+      'color'       => 'rgb(21 96 178)',
+      'image'       => 'image-3.jpeg',
+      'player'      => 'https://myradio24.org/9479',
+      'form'        => 'http://myradio24.com/ru/table/9479?get=json&ahack',
+    ],
+	  	     [
+      'login'       => 'rumi_akzhol',
+      'username'    => 'RUMI_AKZHOL',
+      'password'    => 'uz1vue',
+      'color'       => 'rgb(21 96 178)',
+      'image'       => 'image-3.jpeg',
+      'player'      => 'https://myradio24.org/9479',
+      'form'        => 'http://myradio24.com/ru/table/9479?get=json&ahack',
+    ],
+	  	     [
+      'login'       => 'rumi_ceo',
+      'username'    => 'RUMI_CEO',
+      'password'    => 'a4q1g3',
+      'color'       => 'rgb(21 96 178)',
+      'image'       => 'image-3.jpeg',
+      'player'      => 'https://myradio24.org/9479',
+      'form'        => 'http://myradio24.com/ru/table/9479?get=json&ahack',
+    ],
+    [
+      'login'       => 'romantic_01',
+      'username'    => 'Актобе, Абулхаир Хана, 58',
+      'password'    => 's3wC55',
+      'color'       => 'rgb(165 31 34)',
+      'image'       => 'romantic_red1.jpg',
+      'player'      => 'https://myradio24.org/46047',
+      'form'        => 'http://myradio24.com/ru/table/46047?get=json&ahack',
+    ],
+	  [
+      'login'       => 'romantic_02',
+      'username'    => 'Актобе, Бр. Жубановых, 285 ',
+      'password'    => 'JFfQl0',
+      'color'       => 'rgb(165 31 34)',
+      'image'       => 'romantic_red1.jpg',
+      'player'      => 'https://myradio24.org/46047',
+      'form'        => 'http://myradio24.com/ru/table/46047?get=json&ahack',
+    ],
+	      [
+      'login'       => 'romantic_03',
+      'username'    => 'Актобе, Маресьева, 48',
+      'password'    => 'duJmdy',
+      'color'       => 'rgb(165 31 34)',
+      'image'       => 'romantic_red1.jpg',
+      'player'      => 'https://myradio24.org/46047',
+      'form'        => 'http://myradio24.com/ru/table/46047?get=json&ahack',
+    ],
+	      [
+      'login'       => 'romantic_04',
+      'username'    => 'Актобе, Некрасова, 81',
+      'password'    => 'B4qEho',
+      'color'       => 'rgb(165 31 34)',
+      'image'       => 'romantic_red1.jpg',
+      'player'      => 'https://myradio24.org/46047',
+      'form'        => 'http://myradio24.com/ru/table/46047?get=json&ahack',
+    ],
+	      [
+      'login'       => 'romantic_05',
+      'username'    => 'Актобе, Батыс-2, 42В',
+      'password'    => '5TexCt',
+      'color'       => 'rgb(165 31 34)',
+      'image'       => 'romantic_red1.jpg',
+      'player'      => 'https://myradio24.org/46047',
+      'form'        => 'http://myradio24.com/ru/table/46047?get=json&ahack',
+    ],
+	      [
+      'login'       => 'romantic_06',
+      'username'    => 'Актобе, Молдагулова, 27Г',
+      'password'    => '82m6Xw',
+      'color'       => 'rgb(165 31 34)',
+      'image'       => 'romantic_red1.jpg',
+      'player'      => 'https://myradio24.org/46047',
+			        'form'        => 'http://myradio24.com/ru/table/46047?get=json&ahack',
+    ],
+	      [
+      'login'       => 'romantic_07',
+      'username'    => 'Актобе, ТЦ "Алия"',
+      'password'    => 'utKdR2',
+      'color'       => 'rgb(165 31 34)',
+      'image'       => 'romantic_red1.jpg',
+      'player'      => 'https://myradio24.org/46047',
+      'form'        => 'http://myradio24.com/ru/table/46047?get=json&ahack',
+    ],
+	      [
+      'login'       => 'romantic_08',
+      'username'    => 'Актобе, Ш. Калдаякова 27А',
+      'password'    => 'bvloTs',
+      'color'       => 'rgb(165 31 34)',
+      'image'       => 'romantic_red1.jpg',
+      'player'      => 'https://myradio24.org/46047',
+      'form'        => 'http://myradio24.com/ru/table/46047?get=json&ahack',
+    ],
+	      [
+      'login'       => 'romantic_09',
+      'username'    => 'Актобе, Абулхаир Хана, 27Б',
+      'password'    => 'RsOmhI',
+      'color'       => 'rgb(165 31 34)',
+      'image'       => 'romantic_red1.jpg',
+      'player'      => 'https://myradio24.org/46047',
+      'form'        => 'http://myradio24.com/ru/table/46047?get=json&ahack',
+    ],
+	      [
+      'login'       => 'romantic_10',
+	  'username'    => 'Нур-Султан, Сауран, 1',
+      'password'    => 'S1XzTR',
+      'color'       => 'rgb(165 31 34)',
+      'image'       => 'romantic_red1.jpg',
+      'player'      => 'https://myradio24.org/46047',
+      'form'        => 'http://myradio24.com/ru/table/46047?get=json&ahack',
+    ],
+	      [
+      'login'       => 'romantic_11',
+      'username'    => 'Нур-Султан, Абылайхана, 32',
+      'password'    => 'xgWbOb',
+      'color'       => 'rgb(165 31 34)',
+      'image'       => 'romantic_red1.jpg',
+      'player'      => 'https://myradio24.org/46047',
+      'form'        => 'http://myradio24.com/ru/table/46047?get=json&ahack',
+    ],
+	      [
+      'login'       => 'romantic_12',
+      'username'    => 'Нур-Султан, Мәнгілік ел, 45',
+      'password'    => 'JgFxRo',
+      'color'       => 'rgb(165 31 34)',
+      'image'       => 'romantic_red1.jpg',
+      'player'      => 'https://myradio24.org/46047',
+      'form'        => 'http://myradio24.com/ru/table/46047?get=json&ahack',
+    ],
+	      [
+      'login'       => 'romantic_13',
+      'username'    => 'Нур-Султан, Республики, 19',
+      'password'    => 'vvsqZX',
+      'color'       => 'rgb(165 31 34)',
+      'image'       => 'romantic_red1.jpg',
+      'player'      => 'https://myradio24.org/46047',
+      'form'        => 'http://myradio24.com/ru/table/46047?get=json&ahack',
+    ],
+	[
+      'login'       => 'romantic_ceo',
+      'username'    => 'CEO Марат',
+      'password'    => 'Marat2022',
+      'color'       => 'rgb(165 31 34)',
+      'image'       => 'romantic_red1.jpg',
+      'player'      => 'https://myradio24.org/46047',
+      'form'        => 'http://myradio24.com/ru/table/46047?get=json&ahack',
+    ],
+          [
+      'login'       => 'romantic_puza',
+      'username'    => 'Radio Admin',
+      'password'    => 'egyptic06',
+      'color'       => 'rgb(165 31 34)',
+      'image'       => 'romantic_red1.jpg',
+      'player'      => 'https://myradio24.org/46047',
+	  'form'        => 'http://myradio24.com/ru/table/46047?get=json&ahack',
+    ],
+	      [
+      'login'       => 'romantic_almaty1',
+      'username'    => 'Almaty 1',
+      'password'    => 'JgFxRo',
+      'color'       => 'rgb(165 31 34)',
+      'image'       => 'romantic_red1.jpg',
+      'player'      => 'https://myradio24.org/46047',
+	  'form'        => 'http://myradio24.com/ru/table/46047?get=json&ahack',
+    ],
+	      [
+      'login'       => 'romantic_almaty2',
+      'username'    => 'Almaty 1',
+      'password'    => 'S1XzTR',
+      'color'       => 'rgb(165 31 34)',
+      'image'       => 'romantic_red1.jpg',
+      'player'      => 'https://myradio24.org/46047',
+	  'form'        => 'http://myradio24.com/ru/table/46047?get=json&ahack',
+    ],
+	  	      [
+      'login'       => 'romantic_test_2',
+      'username'    => 'TEST USER',
+      'password'    => 'romantic123',
+      'color'       => 'rgb(165 31 34)',
+      'image'       => 'romantic_red1.jpg',
+    ],
+	  	      [
+      'login'       => 'romantic_test_3',
+      'username'    => 'TEST USER',
+      'password'    => 'romantic123',
+      'color'       => 'rgb(165 31 34)',
+      'image'       => 'romantic_red1.jpg',
+    ],
+	  	      [
+      'login'       => 'romantic_test_4',
+      'username'    => 'TEST USER',
+      'password'    => 'romantic123',
+      'color'       => 'rgb(165 31 34)',
+      'image'       => 'romantic_red1.jpg',
+    ],
+	  	      [
+      'login'       => 'romantic_test_5',
+      'username'    => 'TEST USER',
+      'password'    => 'romantic123',
+      'color'       => 'rgb(165 31 34)',
+      'image'       => 'romantic_red1.jpg',
+    ],
+	  	      [
+      'login'       => 'romantic_test_6',
+      'username'    => 'TEST USER',
+      'password'    => 'romantic123',
+      'color'       => 'rgb(165 31 34)',
+      'image'       => 'romantic_red1.jpg',
+    ],
+	  	      [
+      'login'       => 'romantic_test_7',
+      'username'    => 'TEST USER',
+      'password'    => 'romantic123',
+      'color'       => 'rgb(165 31 34)',
+      'image'       => 'romantic_red1.jpg',
+    ],
+	  	      [
+      'login'       => 'romantic_test_8',
+      'username'    => 'TEST USER',
+      'password'    => 'romantic123',
+      'color'       => 'rgb(165 31 34)',
+      'image'       => 'romantic_red1.jpg',
+    ],
+	  	      [
+      'login'       => 'romantic_test_9',
+      'username'    => 'TEST USER',
+      'password'    => 'romantic123',
+      'color'       => 'rgb(165 31 34)',
+      'image'       => 'romantic_red1.jpg',
+    ],
+	  	      [
+      'login'       => 'romantic_test_10',
+      'username'    => 'TEST USER',
+      'password'    => 'romantic123',
+      'color'       => 'rgb(165 31 34)',
+      'image'       => 'romantic_red1.jpg',
+    ],
+	  	      [
+      'login'       => 'romantic_test_11',
+      'username'    => 'TEST USER',
+      'password'    => 'romantic123',
+      'color'       => 'rgb(165 31 34)',
+      'image'       => 'romantic_red1.jpg',
+    ],
+	  	      [
+      'login'       => 'romantic_test_12',
+      'username'    => 'TEST USER',
+      'password'    => 'romantic123',
+      'color'       => 'rgb(165 31 34)',
+      'image'       => 'romantic_red1.jpg',
+    ],
+	  	      [
+      'login'       => 'romantic_test_13',
+      'username'    => 'TEST USER',
+      'password'    => 'romantic123',
+      'color'       => 'rgb(165 31 34)',
+      'image'       => 'romantic_red1.jpg',
+    ],
+	  	      [
+      'login'       => 'romantic_test_14',
+      'username'    => 'TEST USER',
+      'password'    => 'romantic123',
+      'color'       => 'rgb(165 31 34)',
+      'image'       => 'romantic_red1.jpg',
+    ],
+	  	      [
+      'login'       => 'romantic_test_15',
+      'username'    => 'TEST USER',
+      'password'    => 'romantic123',
+      'color'       => 'rgb(165 31 34)',
+      'image'       => 'romantic_red1.jpg',
+    ],
+	  	      [
+      'login'       => 'romantic_test_16',
+      'username'    => 'TEST USER',
+      'password'    => 'romantic123',
+      'color'       => 'rgb(165 31 34)',
+      'image'       => 'romantic_red1.jpg',
+    ],
+	  	      [
+      'login'       => 'romantic_test_17',
+      'username'    => 'TEST USER',
+      'password'    => 'romantic123',
+      'color'       => 'rgb(165 31 34)',
+      'image'       => 'romantic_red1.jpg',
+    ],
+	  	  	      [
+      'login'       => 'romantic_vadim',
+      'username'    => 'TEST USER',
+      'password'    => 'romantic123',
+      'color'       => 'rgb(165 31 34)',
+					        'player'      => 'https://myradio24.org/46047',
+      'image'       => 'romantic_red1.jpg',
+    ],
+	  	  	  	      [
+      'login'       => 'romantic_aibek',
+      'username'    => 'TEST USER',
+      'password'    => 'romantic123',
+      'color'       => 'rgb(165 31 34)',
+						        'player'      => 'https://myradio24.org/46047',
+      'image'       => 'romantic_red1.jpg',
+    ],
+  ];
+  
+  foreach($users as $k => $user){      
+    $users[$k]['player'] = base64_encode($user['player']);      
+  }  
+  
+  return $users;
+
+}
+
+
+{// Config Pre Setup
+  $sessionDelay   *= 1000;
+  $songDelay      *= 1000;
+  $sendDelay      *= 1000;
+}
